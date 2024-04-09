@@ -1,6 +1,6 @@
 {
-  "name": "@ebenezerdon/node-memory-cache",
-  "version": "1.0.0",
+  "name": "@ebenezerdon/ts-node-cache",
+  "version": "1.0.1",
   "description": "in-memory cache for nodejs",
   "main": "dist/Cache.js",
   "types": "dist/Cache.d.ts",
