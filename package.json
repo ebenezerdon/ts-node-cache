@@ -1,0 +1,16 @@
+{
+  "name": "node-memory-cache",
+  "version": "1.0.0",
+  "description": "in-memory cache for nodejs",
+  "main": "dist/Cache.js",
+  "types": "dist/Cache.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ebenezer Don",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.6",
+    "typescript": "^5.4.4"
+  }
+}
