@@ -1,5 +1,5 @@
 {
-  "name": "node-memory-cache",
+  "name": "@ebenezerdon/node-memory-cache",
   "version": "1.0.0",
   "description": "in-memory cache for nodejs",
   "main": "dist/Cache.js",
