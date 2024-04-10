@@ -22,7 +22,7 @@ npm install @ebenezerdon/ts-node-cache
 
 ```typescript
 import { Cache } from '@ebenezerdon/ts-node-cache'
-const cache = new Cache<string>()
+const cache = new Cache()
 ```
 
 ### Store Data
