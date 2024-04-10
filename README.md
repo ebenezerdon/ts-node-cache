@@ -1,6 +1,9 @@
 # TS-Node-Cache
 
-TS-Node-Cache is a TypeScript-based caching solution that's simple and lightweight. It supports data caching with optional expiration and callbacks.
+TS-Node-Cache is a TypeScript-based caching solution that's simple and lightweight. It supports data caching with optional expiration and callbacks. Similar to memory-cache but with modern implementation and TypeScript support.
+
+[![npm version](https://badge.fury.io/js/%40ebenezerdon%2Fts-node-cache.svg)](https://badge.fury.io/js/%40ebenezerdon%2Fts-node-cache)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## Features
 
