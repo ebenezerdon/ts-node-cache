@@ -1,19 +1,16 @@
 # TS-Node-Cache
 
-TS-Node-Cache is a simple, lightweight caching solution implemented in TypeScript, providing a flexible way to cache data with optional expiration times and custom timeout callbacks. This cache implementation allows storing any type of data.
+TS-Node-Cache is a TypeScript-based caching solution that's simple and lightweight. It supports data caching with optional expiration and callbacks.
 
 ## Features
 
-- **Generic Caching**: Store any type of data with ease.
-- **Expiration Support**: Set a time-to-live (TTL) for each cache entry.
-- **Timeout Callbacks**: Execute custom logic when a cache entry expires.
-- **Debug Mode**: Enable logging to track cache hits and misses.
-- **Serialization**: Export and import your cache to and from JSON format.
-- **Scalability**: Lightweight and straightforward, suitable for small to medium-sized projects.
+- Stores any data type.
+- Allows setting expiration time for entries.
+- Supports custom callbacks on expiration.
+- Debug mode for tracking cache activity.
+- Serialize cache to/from JSON.
 
 ## Installation
-
-To install TS-Node-Cache, use the following npm command:
 
 ```bash
 npm install @ebenezerdon/ts-node-cache
@@ -21,57 +18,38 @@ npm install @ebenezerdon/ts-node-cache
 
 ## Usage
 
-Here's how you can use TS-Node-Cache in your project:
-
-### Importing the Cache
+### Import and Create Cache
 
 ```typescript
 import { Cache } from '@ebenezerdon/ts-node-cache'
-```
-
-### Creating a Cache Instance
-
-```typescript
 const cache = new Cache<string>()
 ```
 
-### Storing Data
+### Store Data
 
 ```typescript
-cache.put('myKey', 'myValue', 5000, (key, value) => {
-  console.log(`${key} with ${value} has expired.`)
-})
+cache.put('myKey', 'myValue', 5000, () => console.log('Expired'))
 ```
 
-This stores `'myValue'` under the key `'myKey'` with a TTL of 5000 milliseconds. After expiration, it logs a message to the console.
-
-### Retrieving Data
+### Retrieve Data
 
 ```typescript
-const value = cache.get('myKey')
+let value = cache.get('myKey')
 ```
 
-This retrieves the value stored under `'myKey'`.
-
-### Deleting Data
+### Delete Data
 
 ```typescript
 cache.del('myKey')
 ```
 
-This deletes the data associated with `'myKey'`.
-
-### Clearing the Cache
+### Clear Cache
 
 ```typescript
 cache.clear()
 ```
 
-This clears all data stored in the cache.
-
-### Debugging
-
-Enable debugging to track cache hits and misses:
+### Enable Debugging
 
 ```typescript
 cache.debug(true)
@@ -93,7 +71,13 @@ cache.debug(true)
 
 ## Contributing
 
-Contributions are welcome! Feel free to open a pull request or an issue if you have suggestions or encounter any problems.
+To contribute:
+
+1. **Fork & Clone**: Fork the repo and clone it locally.
+2. **Make Changes**: Work on your changes.
+3. **Build**: Run `npm run build` to build the project.
+4. **Test**: Ensure your changes don't break anything.
+5. **Submit a PR**: Push your changes and submit a pull request.
 
 ## License
 

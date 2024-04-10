@@ -1,11 +1,12 @@
 {
   "name": "@ebenezerdon/ts-node-cache",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "in-memory cache for nodejs",
   "main": "dist/Cache.js",
   "types": "dist/Cache.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "author": "Ebenezer Don",
   "license": "ISC",
