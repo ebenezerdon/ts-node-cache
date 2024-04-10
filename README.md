@@ -1,6 +1,6 @@
 # TS-Node-Cache
 
-TS-Node-Cache is a simple, lightweight caching solution implemented in TypeScript, providing a flexible way to cache data with optional expiration times and custom timeout callbacks. This cache implementation allows storing any type of data, making it versatile for various applications.
+TS-Node-Cache is a simple, lightweight caching solution implemented in TypeScript, providing a flexible way to cache data with optional expiration times and custom timeout callbacks. This cache implementation allows storing any type of data.
 
 ## Features
 
