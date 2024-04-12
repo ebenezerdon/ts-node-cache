@@ -8,6 +8,18 @@
     "build": "tsc",
     "test": "jest --coverage"
   },
+  "keywords": [
+    "in-memory cache",
+    "nodejs cache",
+    "cache",
+    "memory cache",
+    "nodejs",
+    "npm package",
+    "typescript",
+    "ts",
+    "caching",
+    "ts-cache"
+  ],
   "author": "Ebenezer Don",
   "license": "ISC",
   "devDependencies": {
