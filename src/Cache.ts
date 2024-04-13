@@ -28,42 +28,39 @@ class Cache<T> {
    */
   put(key: string, value: T, time?: number, timeoutCallback?: (key: string, value: T) => void): T {
     if (this._debug) {
-      console.log(`Caching: ${key} = ${JSON.stringify(value)} (@${time})`)
+      console.log(`Caching: ${key} = ${JSON.stringify(value)} (@${time})`);
     }
-
-    // Validates expiration time and timeout callback function.
-    if (time !== undefined) {
-      if (typeof time !== 'number' || isNaN(time) || time <= 0) {
-        throw new Error('Cache timeout must be a positive number')
-      }
+  
+    // Validate expiration time and timeout callback function.
+    if (time !== undefined && (typeof time !== 'number' || isNaN(time) || time <= 0)) {
+      throw new Error('Cache timeout must be a positive number');
     }
+  
     if (timeoutCallback !== undefined && typeof timeoutCallback !== 'function') {
-      throw new Error('Cache timeout callback must be a function')
+      throw new Error('Cache timeout callback must be a function');
     }
-
-    // Clears existing timeout if updating an existing record.
-    const oldRecord = this._cache[key]
+  
+    // Clear existing timeout if updating an existing record.
+    const oldRecord = this._cache[key];
     if (oldRecord) {
-      clearTimeout(oldRecord.timeout)
+      clearTimeout(oldRecord.timeout);
     } else {
-      this._size++
+      this._size++;
     }
-
-    // Sets expiration time and schedules timeout callback if provided.
-    const expire = time !== undefined ? time + Date.now() : Infinity
-    const timeout =
-      time !== undefined
-        ? setTimeout(() => {
-            this._del(key)
-            timeoutCallback?.(key, value)
-          }, time)
-        : undefined
-
-    // Updates the cache record.
-    this._cache[key] = { value, expire, timeout }
-
-    return value
+  
+    // Set expiration time and schedule timeout callback if provided.
+    const expire = time !== undefined ? time + Date.now() : Infinity;
+    const timeout = time !== undefined ? setTimeout(() => {
+      this._del(key);
+      timeoutCallback?.(key, value);
+    }, time) : undefined;
+  
+    // Update the cache record.
+    this._cache[key] = { value, expire, timeout };
+  
+    return value;
   }
+  
 
   /**
    * Deletes a cache record by key.
